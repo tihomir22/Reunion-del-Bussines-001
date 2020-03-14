@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        width: 100%;
+      }
+      thead > tr > td {
+        background-color: gray;
+        text-align: center;
+        color: white;
+      }
+      tbody > tr > td {
+        text-align: center;
+        border: 1px solid black;
+      }
+      #formulario {
+        border: 1px solid green;
+        min-width: 500px;
+        margin-right: 10px;
+      }
+      #formulario > input {
+        display: block;
+        width: 90%;
+        margin: 10px 0 10px 0;
+      }
+    </style>
+    <title>Tabla</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>Firm</td>
+          <td>Org</td>
+          <td>Lob</td>
+          <td>Sub Lob</td>
+          <td>Bussines Plans</td>
+          <td>Busines Components</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4">Goldman Sachs</td>
+          <td rowspan="5">Golderberg</td>
+          <td>Dembow</td>
+          <td>Dembow loco</td>
+          <td>Sueltalo</td>
+          <td>El torpedo claro</td>
+        </tr>
+        <tr>
+          <td>Dembow</td>
+          <td>Dembow loco</td>
+          <td>Sueltalo</td>
+          <td>El torpedo claro</td>
+        </tr>
+        <tr>
+          <td colspan="2">Dembow</td>
+          <td>Sueltalo</td>
+          <td>El torpedo claro</td>
+        </tr>
+        <tr>
+          <td>Dembow</td>
+          <td>Dembow loco</td>
+          <td>Sueltalo</td>
+          <td>El torpedo claro</td>
+        </tr>
+        <tr>
+          <td>Goldman Sachs</td>
+          <td>Dembow</td>
+          <td>Dembow loco</td>
+          <td>Sueltalo</td>
+          <td>El torpedo claro</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr style="margin: 20px 0px;" />
+    <div style="float:left" id="formulario">
+      <input type="text" name="nombre" placeholder="Adolfus" />
+      <input type="text" name="apellido" placeholder="Dominus" />
+      <label for="seleccion">Elige tu spirit animal:</label>
+      <select name="seleccion" id="seleccionSeso">
+        <option value="none">Ninguno</option>
+        <option value="tejon">Tejón</option>
+        <option value="tejonmiel">Tejón de la miel</option>
+        <option value="tejonamericano">Tejón americano</option>
+        <option value="badger">Badger</option>
+      </select>
+    </div>
+    <div style="float:left" id="introduceAquiLosBadgers"></div>
+    <div style="clear: both;text-align: center;margin-top: 20px;">DETHKLOK</div>
+
+    <script>
+      document.querySelectorAll("input,select").forEach(item => {
+        item.addEventListener("change", event => {
+          let objetivo = document.getElementById("introduceAquiLosBadgers");
+          switch (event.target.value) {
+            case "tejon":
+              let img = document.createElement("img");
+              img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Badger-badger.jpg/1200px-Badger-badger.jpg";
+              img.style.maxWidth = "200px";
+              img.style.maxHeight = "200px";
+              objetivo.appendChild(img);
+              break;
+            case "tejonmiel":
+              break;
+            case "tejonamericano":
+              break;
+            case "badger":
+              break;
+            default:
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
